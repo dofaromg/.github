@@ -1,0 +1,91 @@
+# Naming Migration Registry — mrliouai
+# root_owner: dofaromg
+# canonical_name: mrliouai
+# registry_version: 1.0.0
+# generated_at: 2026-08-07
+# policy: 對外唯一產品名稱為 mrliouai；其他拼寫為內部資料，保留不更改，僅整合登錄。
+#         Global unregistered destructive/batch rename is PROHIBITED by default.
+#         All naming migrations must be registered here before execution.
+
+entries:
+
+  - name: "mrliouai"
+    role: "canonical_external_product_name"
+    classification: "canonical"
+    scope: "public_facing"
+    evidence_refs:
+      - "E004"
+      - "E011"
+    status: "active"
+    notes: "唯一對外產品一致性名稱；大小寫完全一致"
+    authorized_by: "dofaromg"
+    authorization_reference: "governance/mrliouai_ROOT_GOVERNANCE.md"
+
+  - name: "mRLiouAI"
+    role: "internal_identifier"
+    classification: "internal"
+    scope: "internal_only"
+    evidence_refs:
+      - "E001"
+      - "E002"
+    status: "retained_internal"
+    notes: "內部識別符；保留不更改；不用於對外展示"
+    authorized_by: "dofaromg"
+    authorization_reference: "governance/CONFLICT_MATRIX.md#C001"
+
+  - name: "MRLiouAI"
+    role: "internal_identifier"
+    classification: "internal"
+    scope: "internal_only"
+    evidence_refs:
+      - "E019"
+    status: "retained_internal"
+    notes: "內部拼寫（全大寫 MRL 版本）；.env.deploy 中使用；保留不更改；若影響對外顯示由 Root 決定是否更新"
+    authorized_by: "dofaromg"
+    authorization_reference: "governance/CONFLICT_MATRIX.md#C007"
+
+  - name: "MrLiou AI"
+    role: "internal_identifier"
+    classification: "internal"
+    scope: "internal_only"
+    evidence_refs:
+      - "E004"
+    status: "retained_internal"
+    notes: "含空格版本；保留為內部資料"
+    authorized_by: "dofaromg"
+    authorization_reference: "governance/mrliouai_ROOT_GOVERNANCE.md"
+
+  - name: "MRL"
+    role: "internal_abbreviation"
+    classification: "internal"
+    scope: "internal_only"
+    evidence_refs:
+      - "E001"
+      - "E013"
+      - "E014"
+    status: "retained_internal"
+    notes: "原始縮寫；保留為內部識別符；不作為對外品牌"
+    authorized_by: "dofaromg"
+    authorization_reference: "governance/CONFLICT_MATRIX.md#C001"
+
+  - name: "MrLiouWord"
+    role: "origin_signature"
+    classification: "identity"
+    scope: "identity"
+    evidence_refs:
+      - "E001"
+      - "E015"
+    status: "retained_as_origin_signature"
+    notes: "origin signature；保留為身分識別；不作為對外產品名稱"
+    authorized_by: "dofaromg"
+    authorization_reference: "governance/mrliouai_ROOT_GOVERNANCE.md"
+
+policy:
+  canonical_external_name: "mrliouai"
+  internal_names_policy: "retained_unchanged"
+  default_rename_policy: "prohibited_without_registration"
+  destructive_global_rename: "absolutely_prohibited"
+  historical_document_modification: "prohibited"
+  new_public_document_standard: "mrliouai"
+  alias_policy: "all_names_must_be_registered_here"
+  authorized_by: "dofaromg"

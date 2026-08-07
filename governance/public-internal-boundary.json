@@ -1,0 +1,66 @@
+{
+  "policy_version": "1.0.0",
+  "generated_at": "2026-08-07",
+  "root_owner": "dofaromg",
+  "canonical_name": "mrliouai",
+  "public_layer": {
+    "description": "Content visible to external users. Only mrliouai brand name allowed. Vendor information is absolutely prohibited here.",
+    "allowed_paths_patterns": [
+      "README.md",
+      "profile/**",
+      "docs/**"
+    ],
+    "prohibited_fields": [
+      "vendor_name",
+      "powered_by",
+      "provider_endpoint",
+      "model_version_identifying_vendor",
+      "api_key",
+      "vendor_token",
+      "vendor_contract_info"
+    ],
+    "prohibited_patterns": [
+      "Powered by",
+      "powered by",
+      "POWERED BY"
+    ],
+    "allowed_brand": "mrliouai",
+    "allowed_root_owner_field": "dofaromg"
+  },
+  "internal_layer": {
+    "description": "Controlled internal data layer. Vendor provenance and supply chain records must be preserved here.",
+    "path_patterns": [
+      "deploy/.env*",
+      "internal/**",
+      "private/**",
+      "**/*[INTERNAL]*"
+    ],
+    "requirements": [
+      "No plaintext secrets committed to git",
+      "Vendor names, model lists, API endpoints allowed here",
+      "Provenance and supply chain records must be preserved"
+    ]
+  },
+  "governance_transparency": {
+    "public": [
+      "change_records",
+      "approval_decisions",
+      "evidence_index",
+      "conflict_rulings",
+      "audit_trail"
+    ],
+    "not_required_public": [
+      "vendor_list",
+      "model_versions",
+      "api_details",
+      "procurement_info"
+    ]
+  },
+  "enforcement": {
+    "validation_script": "scripts/validate_governance.py",
+    "ci_workflow": ".github/workflows/validate-governance.yml",
+    "fail_mode": "closed",
+    "violation_handler": "stop_and_report_to_root",
+    "auto_fix": false
+  }
+}

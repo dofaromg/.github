@@ -1,0 +1,157 @@
+name: Validate mrliouai Governance
+
+on:
+  push:
+    paths:
+      - 'governance/**'
+      - 'scripts/**'
+      - '.github/workflows/validate-governance.yml'
+      - '.github/CODEOWNERS'
+  pull_request:
+    paths:
+      - 'governance/**'
+      - 'scripts/**'
+      - '.github/workflows/validate-governance.yml'
+      - '.github/CODEOWNERS'
+  schedule:
+    # Weekly incremental scan every Monday 02:00 UTC
+    - cron: '0 2 * * 1'
+  workflow_dispatch:
+
+jobs:
+  validate-governance:
+    name: Governance Validation (fail-closed)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install jsonschema
+
+      - name: Validate governance
+        run: python scripts/validate_governance.py
+
+      - name: Validate JSON schema
+        run: |
+          python3 -c "
+          import json, jsonschema, sys
+          schema = json.load(open('governance/evidence-index.schema.json'))
+          instance = json.load(open('governance/evidence-index.json'))
+          try:
+              jsonschema.validate(instance, schema)
+              print('[PASS] evidence-index.json is valid against schema')
+          except jsonschema.ValidationError as e:
+              print(f'[FAIL] Schema validation error: {e.message}')
+              sys.exit(1)
+          "
+
+      - name: Check canonical_name consistency
+        run: |
+          python3 - <<'EOF'
+          import re, sys, pathlib
+          CANONICAL = "mrliouai"
+          ROOT_OWNER = "dofaromg"
+          violations = []
+          for f in pathlib.Path("governance").glob("*.json"):
+              import json
+              data = json.loads(f.read_text())
+              cn = data.get("canonical_name")
+              if cn and cn != CANONICAL:
+                  violations.append(f"{f}: canonical_name='{cn}' must be '{CANONICAL}'")
+              ro = data.get("root_owner")
+              if ro and ro != ROOT_OWNER:
+                  violations.append(f"{f}: root_owner='{ro}' must be '{ROOT_OWNER}'")
+          if violations:
+              print("\n".join(f"[FAIL] {v}" for v in violations))
+              sys.exit(1)
+          print("[PASS] canonical_name and root_owner consistent")
+          EOF
+
+      - name: Check no duplicate evidence IDs
+        run: |
+          python3 - <<'EOF'
+          import json, sys
+          data = json.load(open("governance/evidence-index.json"))
+          ids = [e["id"] for e in data["evidence"]]
+          dupes = [i for i in ids if ids.count(i) > 1]
+          if dupes:
+              print(f"[FAIL] Duplicate evidence IDs: {set(dupes)}")
+              sys.exit(1)
+          print(f"[PASS] {len(ids)} unique evidence IDs")
+          EOF
+
+      - name: Check all permalinks use 40-char SHA
+        run: |
+          python3 - <<'EOF'
+          import json, re, sys
+          SHA40 = re.compile(r"^[0-9a-f]{40}$")
+          PLINK = re.compile(r"https://github\.com/dofaromg/[^/]+/blob/([0-9a-f]{40})/")
+          data = json.load(open("governance/evidence-index.json"))
+          violations = []
+          for e in data["evidence"]:
+              sha = e.get("commit_sha", "")
+              if not SHA40.match(sha):
+                  violations.append(f"{e['id']}: bad commit_sha '{sha}'")
+              m = PLINK.search(e.get("permalink", ""))
+              if not m:
+                  violations.append(f"{e['id']}: permalink missing 40-char SHA")
+              elif m.group(1) != sha:
+                  violations.append(f"{e['id']}: permalink SHA mismatch")
+          if violations:
+              for v in violations:
+                  print(f"[FAIL] {v}")
+              sys.exit(1)
+          print("[PASS] All permalinks use fixed 40-char SHA")
+          EOF
+
+      - name: Check public paths for vendor leak
+        run: |
+          python3 - <<'EOF'
+          import re, sys, pathlib
+          PROHIBITED = [re.compile(p, re.IGNORECASE) for p in ["Powered by", "powered_by"]]
+          PUBLIC = [pathlib.Path("profile"), pathlib.Path("README.md")]
+          violations = []
+          for pub in PUBLIC:
+              if not pub.exists():
+                  continue
+              files = [pub] if pub.is_file() else pub.rglob("*")
+              for f in files:
+                  if not pathlib.Path(f).is_file():
+                      continue
+                  content = pathlib.Path(f).read_text(errors="ignore")
+                  for pat in PROHIBITED:
+                      if pat.search(content):
+                          violations.append(f"Vendor leak in public path: {f}")
+          if violations:
+              for v in violations:
+                  print(f"[FAIL] {v}")
+              sys.exit(1)
+          print("[PASS] No vendor leak in public paths")
+          EOF
+
+      - name: Verify no second root
+        run: |
+          python3 - <<'EOF'
+          import re, sys, pathlib
+          ROOT_OWNER = "dofaromg"
+          violations = []
+          for f in pathlib.Path("governance").glob("*.md"):
+              content = f.read_text()
+              for m in re.finditer(r"root_owner:\s*(\S+)", content):
+                  if m.group(1) not in (ROOT_OWNER, "dofaromg"):
+                      violations.append(f"{f}: second root_owner '{m.group(1)}'")
+          if violations:
+              for v in violations:
+                  print(f"[FAIL] {v}")
+              sys.exit(1)
+          print("[PASS] No second root owner found")
+          EOF

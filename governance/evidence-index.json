@@ -1,0 +1,334 @@
+{
+  "$schema": "./evidence-index.schema.json",
+  "schema_version": "1.0.0",
+  "generated_at": "2026-08-07",
+  "root_owner": "dofaromg",
+  "canonical_name": "mrliouai",
+  "origin_signature": "MrLiouWord",
+  "completeness_status": "in-progress",
+  "evidence": [
+    {
+      "id": "E001",
+      "repo": "dofaromg/flow-tasks",
+      "path": "MRL_Mother/00_rootlaw/MRL_ROOT_AUTHORITY_v1.md",
+      "commit_sha": "06dc98299897c09c63b77f23968e681e09e51362",
+      "permalink": "https://github.com/dofaromg/flow-tasks/blob/06dc98299897c09c63b77f23968e681e09e51362/MRL_Mother/00_rootlaw/MRL_ROOT_AUTHORITY_v1.md",
+      "category": "Root Authority Declaration",
+      "summary": "root_authority: Mr.liou; Mr.liou/MrLiouWord is MRL origin, creator, and final naming/authorization/commercial decision authority; automation may only execute rules, not authorize in place of Root.",
+      "claims_supported": [
+        "root_identity",
+        "non_replaceability",
+        "ai_cannot_self_authorize"
+      ],
+      "evidence_strength": "direct",
+      "canonical": true,
+      "conflict_status": "none"
+    },
+    {
+      "id": "E002",
+      "repo": "dofaromg/----2",
+      "path": "docs/SOVEREIGNTY.md",
+      "commit_sha": "47484ba7d7a9672053e07fb4077dd9a55aaf14ed",
+      "permalink": "https://github.com/dofaromg/----2/blob/47484ba7d7a9672053e07fb4077dd9a55aaf14ed/docs/SOVEREIGNTY.md",
+      "category": "Sovereignty Declaration",
+      "summary": "Root Owner: Mr.liou / GitHub dofaromg; Root retains all rights of definition, modification, naming, authorization, revocation, merge, rejection, deployment, and final interpretation; AI tools and external platforms do not gain Root status by hosting or executing.",
+      "claims_supported": [
+        "root_identity",
+        "global_sovereignty",
+        "ai_cannot_elevate"
+      ],
+      "evidence_strength": "direct",
+      "canonical": true,
+      "conflict_status": "none"
+    },
+    {
+      "id": "E003",
+      "repo": "dofaromg/----2",
+      "path": "README.md",
+      "commit_sha": "47484ba7d7a9672053e07fb4077dd9a55aaf14ed",
+      "permalink": "https://github.com/dofaromg/----2/blob/47484ba7d7a9672053e07fb4077dd9a55aaf14ed/README.md",
+      "category": "Repository Overview",
+      "summary": "Core repository README establishing mRLiouAI governance baseline entry point.",
+      "claims_supported": [
+        "repo_ownership",
+        "governance_baseline"
+      ],
+      "evidence_strength": "corroborating",
+      "canonical": true,
+      "conflict_status": "none"
+    },
+    {
+      "id": "E004",
+      "repo": "dofaromg/----2",
+      "path": "docs/NAMING.md",
+      "commit_sha": "47484ba7d7a9672053e07fb4077dd9a55aaf14ed",
+      "permalink": "https://github.com/dofaromg/----2/blob/47484ba7d7a9672053e07fb4077dd9a55aaf14ed/docs/NAMING.md",
+      "category": "Naming Authority",
+      "summary": "Establishes mRLiouAI as the sole external brand name; historical spellings listed as aliases with explicit migration rules.",
+      "claims_supported": [
+        "canonical_naming",
+        "naming_authority"
+      ],
+      "evidence_strength": "direct",
+      "canonical": true,
+      "conflict_status": "historical_spellings_registered_as_alias"
+    },
+    {
+      "id": "E005",
+      "repo": "dofaromg/----2",
+      "path": "docs/SYSTEM_POSITIONING.md",
+      "commit_sha": "47484ba7d7a9672053e07fb4077dd9a55aaf14ed",
+      "permalink": "https://github.com/dofaromg/----2/blob/47484ba7d7a9672053e07fb4077dd9a55aaf14ed/docs/SYSTEM_POSITIONING.md",
+      "category": "System Positioning",
+      "summary": "Defines mRLiouAI positioning in market and tech stack, vendor hierarchy, and public display restrictions.",
+      "claims_supported": [
+        "public_internal_boundary",
+        "vendor_cannot_elevate"
+      ],
+      "evidence_strength": "direct",
+      "canonical": true,
+      "conflict_status": "none"
+    },
+    {
+      "id": "E006",
+      "repo": "dofaromg/flow-tasks-01",
+      "path": "AUTHORITY_ROOT.md",
+      "commit_sha": "33422c2e666632b198e51c762b9fb2b2e4ef04bc",
+      "permalink": "https://github.com/dofaromg/flow-tasks-01/blob/33422c2e666632b198e51c762b9fb2b2e4ef04bc/AUTHORITY_ROOT.md",
+      "category": "Authority Declaration",
+      "summary": "root_owner: dofaromg; dofaromg is sole Root of this repository; Root declaration may not be split or removed; explicitly scoped to this repo — does not claim authority over external systems.",
+      "claims_supported": [
+        "root_identity",
+        "repo_scope_limitation"
+      ],
+      "evidence_strength": "direct",
+      "canonical": true,
+      "conflict_status": "repo_scope_vs_global_claim_see_C003"
+    },
+    {
+      "id": "E007",
+      "repo": "dofaromg/flow-tasks-01",
+      "path": "docs/STATUS_AUTHORITY.md",
+      "commit_sha": "33422c2e666632b198e51c762b9fb2b2e4ef04bc",
+      "permalink": "https://github.com/dofaromg/flow-tasks-01/blob/33422c2e666632b198e51c762b9fb2b2e4ef04bc/docs/STATUS_AUTHORITY.md",
+      "category": "Status Authority Record",
+      "summary": "Governance status and authorization record confirming Root approval chain is valid.",
+      "claims_supported": [
+        "governance_status",
+        "approval_chain"
+      ],
+      "evidence_strength": "corroborating",
+      "canonical": true,
+      "conflict_status": "none"
+    },
+    {
+      "id": "E008",
+      "repo": "dofaromg/flow-tasks-01",
+      "path": "governance/INTERNAL_GATE.yaml",
+      "commit_sha": "33422c2e666632b198e51c762b9fb2b2e4ef04bc",
+      "permalink": "https://github.com/dofaromg/flow-tasks-01/blob/33422c2e666632b198e51c762b9fb2b2e4ef04bc/governance/INTERNAL_GATE.yaml",
+      "category": "Access Gate",
+      "summary": "Governance file changes require dofaromg approval; Gate may not be bypassed, delegated, or overridden without Root consent.",
+      "claims_supported": [
+        "technical_gate",
+        "non_bypassable_restriction"
+      ],
+      "evidence_strength": "direct_executable",
+      "canonical": true,
+      "conflict_status": "relationship_with_sole_root_final_decision_see_C006"
+    },
+    {
+      "id": "E009",
+      "repo": "dofaromg/flow-tasks-01",
+      "path": "governance/ACCEPTANCE_GATE.yaml",
+      "commit_sha": "33422c2e666632b198e51c762b9fb2b2e4ef04bc",
+      "permalink": "https://github.com/dofaromg/flow-tasks-01/blob/33422c2e666632b198e51c762b9fb2b2e4ef04bc/governance/ACCEPTANCE_GATE.yaml",
+      "category": "Acceptance Gate",
+      "summary": "Acceptance gate defining acceptable change conditions and rejection criteria.",
+      "claims_supported": [
+        "technical_gate",
+        "acceptance_criteria"
+      ],
+      "evidence_strength": "direct_executable",
+      "canonical": true,
+      "conflict_status": "none"
+    },
+    {
+      "id": "E010",
+      "repo": "dofaromg/flow-tasks-01",
+      "path": "evidence/EVIDENCE_MANIFEST.json",
+      "commit_sha": "33422c2e666632b198e51c762b9fb2b2e4ef04bc",
+      "permalink": "https://github.com/dofaromg/flow-tasks-01/blob/33422c2e666632b198e51c762b9fb2b2e4ef04bc/evidence/EVIDENCE_MANIFEST.json",
+      "category": "Evidence Manifest",
+      "summary": "Machine-readable evidence manifest recording integrity verification hashes and summaries of governance assets.",
+      "claims_supported": [
+        "asset_integrity",
+        "verifiability"
+      ],
+      "evidence_strength": "direct_executable",
+      "canonical": true,
+      "conflict_status": "none"
+    },
+    {
+      "id": "E011",
+      "repo": "dofaromg/MRL_AI_SYSTEM",
+      "path": "docs/mrliouai_產品正名與材料附錄_v1.md",
+      "commit_sha": "52c5bd617df3156cc4483a53231c1dbdf50cd782",
+      "permalink": "https://github.com/dofaromg/MRL_AI_SYSTEM/blob/52c5bd617df3156cc4483a53231c1dbdf50cd782/docs/mrliouai_%E7%94%A2%E5%93%81%E6%AD%A3%E5%90%8D%E8%88%87%E6%9D%90%E6%96%99%E9%99%84%E9%8C%84_v1.md",
+      "category": "Product Naming & Materials Annex",
+      "summary": "Establishes product naming hierarchy, parent layer, model supply side, and external Adapter structure; mrliouai is the canonical external product name; other internal spellings retained unchanged.",
+      "claims_supported": [
+        "product_naming",
+        "layer_hierarchy",
+        "historical_migration"
+      ],
+      "evidence_strength": "direct",
+      "canonical": true,
+      "conflict_status": "mrliouai_is_canonical_external_name_internal_names_retained"
+    },
+    {
+      "id": "E012",
+      "repo": "dofaromg/----2",
+      "path": "ingest/2026-07-25/definition/mrliouai_CoverageMap_v1_0_0.md",
+      "commit_sha": "47484ba7d7a9672053e07fb4077dd9a55aaf14ed",
+      "permalink": "https://github.com/dofaromg/----2/blob/47484ba7d7a9672053e07fb4077dd9a55aaf14ed/ingest/2026-07-25/definition/mrliouai_CoverageMap_v1_0_0.md",
+      "category": "Coverage Map",
+      "summary": "Records deduplication, distillation, refactoring, provenance tracking, and acceptance results of 'do not elevate external names' rule.",
+      "claims_supported": [
+        "provenance_tracking",
+        "external_names_not_elevatable"
+      ],
+      "evidence_strength": "direct",
+      "canonical": true,
+      "conflict_status": "none"
+    },
+    {
+      "id": "E013",
+      "repo": "dofaromg/flow-tasks",
+      "path": "scripts/validate_mrl_governance.py",
+      "commit_sha": "06dc98299897c09c63b77f23968e681e09e51362",
+      "permalink": "https://github.com/dofaromg/flow-tasks/blob/06dc98299897c09c63b77f23968e681e09e51362/scripts/validate_mrl_governance.py",
+      "category": "Validation Script",
+      "summary": "Early governance validation script verifying Root authorization, naming, and governance rules.",
+      "claims_supported": [
+        "technical_validation",
+        "governance_enforceability"
+      ],
+      "evidence_strength": "corroborating",
+      "canonical": true,
+      "conflict_status": "none"
+    },
+    {
+      "id": "E014",
+      "repo": "dofaromg/flow-tasks",
+      "path": "MRL_Mother/06_trace/MRL_GOVERNANCE_PACKAGE_SHA256SUMS_v1.txt",
+      "commit_sha": "06dc98299897c09c63b77f23968e681e09e51362",
+      "permalink": "https://github.com/dofaromg/flow-tasks/blob/06dc98299897c09c63b77f23968e681e09e51362/MRL_Mother/06_trace/MRL_GOVERNANCE_PACKAGE_SHA256SUMS_v1.txt",
+      "category": "Integrity Checksums",
+      "summary": "SHA256 checksum list for governance packages providing verifiable asset integrity baseline.",
+      "claims_supported": [
+        "asset_integrity",
+        "tamper_evidence"
+      ],
+      "evidence_strength": "direct",
+      "canonical": true,
+      "conflict_status": "none"
+    },
+    {
+      "id": "E015",
+      "repo": "dofaromg/MRL_AI_SYSTEM",
+      "path": "09_workflow/signature.js",
+      "commit_sha": "52c5bd617df3156cc4483a53231c1dbdf50cd782",
+      "permalink": "https://github.com/dofaromg/MRL_AI_SYSTEM/blob/52c5bd617df3156cc4483a53231c1dbdf50cd782/09_workflow/signature.js",
+      "category": "Origin Signature",
+      "summary": "Technical implementation of MrLiouWord origin signature confirming identity and authorization chain.",
+      "claims_supported": [
+        "origin_signature",
+        "identity_confirmation"
+      ],
+      "evidence_strength": "direct",
+      "canonical": true,
+      "conflict_status": "none"
+    },
+    {
+      "id": "E016",
+      "repo": "dofaromg/particle-file-system",
+      "path": "08_Audit/MRL_SOURCE_GATE.yaml",
+      "commit_sha": "349bad2a98d3c635193ec58167aed6db7249059d",
+      "permalink": "https://github.com/dofaromg/particle-file-system/blob/349bad2a98d3c635193ec58167aed6db7249059d/08_Audit/MRL_SOURCE_GATE.yaml",
+      "category": "Source Gate",
+      "summary": "Source gate providing audit-layer control over asset provenance.",
+      "claims_supported": [
+        "asset_source_control",
+        "audit_trail"
+      ],
+      "evidence_strength": "direct_executable",
+      "canonical": true,
+      "conflict_status": "none"
+    },
+    {
+      "id": "E017",
+      "repo": "dofaromg/500-ai-machine-learning-deep-learning-computer-vision-nlp-projects-with-code",
+      "path": "MRL_AI_SYSTEM/docs/MRL_DELIVERY_MANIFEST_20260531.md",
+      "commit_sha": "3999e378d78f50a28b7adbb0f195f176251361a1",
+      "permalink": "https://github.com/dofaromg/500-ai-machine-learning-deep-learning-computer-vision-nlp-projects-with-code/blob/3999e378d78f50a28b7adbb0f195f176251361a1/MRL_AI_SYSTEM/docs/MRL_DELIVERY_MANIFEST_20260531.md",
+      "category": "Delivery Manifest",
+      "summary": "MRL delivery manifest recording 2026-05-31 deliverables and their provenance and integrity.",
+      "claims_supported": [
+        "delivery_integrity",
+        "historical_timestamp"
+      ],
+      "evidence_strength": "direct",
+      "canonical": true,
+      "conflict_status": "repo_is_fork_evidence_scope_limited_to_MRL_AI_SYSTEM_subdir"
+    },
+    {
+      "id": "E018",
+      "repo": "dofaromg/model-context-protocol-mcp-with-next-js",
+      "path": "MRL_ABSORPTION.md",
+      "commit_sha": "56ce7598c378a140f97006243f260790d8dc03db",
+      "permalink": "https://github.com/dofaromg/model-context-protocol-mcp-with-next-js/blob/56ce7598c378a140f97006243f260790d8dc03db/MRL_ABSORPTION.md",
+      "category": "Absorption / Integration Record",
+      "summary": "Records rules and boundaries for absorbing external technology into the mRLiouAI governance system.",
+      "claims_supported": [
+        "absorption_rules",
+        "external_tech_integration_boundary"
+      ],
+      "evidence_strength": "direct",
+      "canonical": true,
+      "conflict_status": "repo_is_fork_upstream_content_vs_mrl_governance_content_distinction_required"
+    },
+    {
+      "id": "E019",
+      "repo": "dofaromg/mrliouword-system",
+      "path": "deploy/.env.deploy",
+      "commit_sha": "fb00214e12ea5123c07255a7abe2ccaf72325a14",
+      "permalink": "https://github.com/dofaromg/mrliouword-system/blob/fb00214e12ea5123c07255a7abe2ccaf72325a14/deploy/.env.deploy",
+      "category": "Deployment Configuration",
+      "summary": "Deployment config containing NEXT_PUBLIC_APP_NAME=MRLiouAI (old spelling).",
+      "claims_supported": [
+        "deployment_history",
+        "origin_signature_association"
+      ],
+      "evidence_strength": "historical",
+      "canonical": false,
+      "conflict_status": "MRLiouAI_is_internal_identifier_retained; if_public_ui_shows_this_update_to_mrliouai_see_C007"
+    },
+    {
+      "id": "E020",
+      "repo": "dofaromg/mrliouword-system",
+      "path": "AI_PROVIDERS_README.md",
+      "commit_sha": "fb00214e12ea5123c07255a7abe2ccaf72325a14",
+      "permalink": "https://github.com/dofaromg/mrliouword-system/blob/fb00214e12ea5123c07255a7abe2ccaf72325a14/AI_PROVIDERS_README.md",
+      "category": "Provider Documentation",
+      "summary": "AI provider documentation recording vendor list and integration methods.",
+      "claims_supported": [
+        "vendor_historical_record",
+        "internal_data_preservation"
+      ],
+      "evidence_strength": "historical",
+      "canonical": false,
+      "conflict_status": "vendor_names_present_check_public_layer_isolation_see_C005"
+    }
+  ]
+}
