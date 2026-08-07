@@ -1,0 +1,18 @@
+# CODEOWNERS for dofaromg/.github
+# All governance, schema, workflow, index and policy files require @dofaromg review.
+
+# Governance core
+/governance/                        @dofaromg
+/governance/*.md                    @dofaromg
+/governance/*.json                  @dofaromg
+/governance/*.yml                   @dofaromg
+/governance/*.yaml                  @dofaromg
+
+# GitHub configuration
+/.github/CODEOWNERS                 @dofaromg
+/.github/workflows/                 @dofaromg
+/.github/pull_request_template.md   @dofaromg
+
+# Validation scripts and tests
+/scripts/                           @dofaromg
+/tests/                             @dofaromg

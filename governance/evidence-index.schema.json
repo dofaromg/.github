@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "mRLiouAI Evidence Index Schema",
+  "description": "Schema for the dofaromg/.github governance evidence index",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "root_owner",
+    "canonical_name",
+    "evidence"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "generated_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}"
+    },
+    "root_owner": {
+      "type": "string",
+      "const": "dofaromg"
+    },
+    "canonical_name": {
+      "type": "string",
+      "const": "mrliouai"
+    },
+    "origin_signature": {
+      "type": "string"
+    },
+    "completeness_status": {
+      "type": "string",
+      "enum": [
+        "in-progress",
+        "complete",
+        "deprecated"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "repo",
+          "path",
+          "commit_sha",
+          "permalink",
+          "category",
+          "summary",
+          "claims_supported",
+          "evidence_strength",
+          "canonical",
+          "conflict_status"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^E\\d{3}$",
+            "description": "Evidence ID in format E001-E999"
+          },
+          "repo": {
+            "type": "string",
+            "pattern": "^dofaromg/",
+            "description": "Repository in format dofaromg/repo-name"
+          },
+          "path": {
+            "type": "string",
+            "description": "File path within repository"
+          },
+          "commit_sha": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{40}$",
+            "description": "Fixed 40-character commit SHA"
+          },
+          "permalink": {
+            "type": "string",
+            "pattern": "^https://github\\.com/dofaromg/",
+            "description": "Permanent GitHub permalink including fixed SHA"
+          },
+          "category": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 10
+          },
+          "claims_supported": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "evidence_strength": {
+            "type": "string",
+            "enum": [
+              "direct",
+              "direct_executable",
+              "corroborating",
+              "historical",
+              "pending_verification"
+            ]
+          },
+          "canonical": {
+            "type": "boolean"
+          },
+          "conflict_status": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
