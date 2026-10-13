@@ -1,4 +1,4 @@
-## Pull Request Checklist — mrliouai Governance
+## Pull Request Checklist — MRL / mrliouai Governance
 
 請在提交前確認以下每一項。未完成項目須說明原因。
 
@@ -8,8 +8,8 @@
 - [ ] AI 或自動化未自行建立授權
 
 ### 2. Canonical 名稱
-- [ ] 對外公開內容使用 `mrliouai`（全小寫，大小寫完全一致）
-- [ ] 未在公開層使用內部識別符（`MRL`、`mRLiouAI`、`MRLiouAI`、`MrLiouWord`）
+- [ ] MRL 世界模型／MRL_ 原生產品與模組名保留；mrliouai 品牌另欄保存
+- [ ] `origin_signature: MrLiouWord` 保留；公開及內部均可呈現 MRL 原名與來源署名，不將兩者列為洩漏或替換為品牌
 - [ ] 若有新命名需求，已登錄至 `governance/NAMING_MIGRATION_REGISTRY.yml`
 
 ### 3. 公開／內部邊界

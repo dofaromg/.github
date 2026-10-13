@@ -90,3 +90,22 @@ generated_at: 2026-08-07
 
 邊界定義只能由 `@dofaromg` 核准變更。
 變更時須同步更新本文件與 `public-internal-boundary.json`。
+
+
+## 2026-10-13｜MRL 名稱與來源身分恢復（現行裁定）
+
+canonical_authority: Mr.liou
+origin_signature: MrLiouWord
+
+Root 本輪明確指示：「我們的命名名稱MRL都被拿掉，幫我把他改回來，然後找出問題出在哪裡」。
+本追加優先於上方 2026-08-07 的「MRL 僅限內部」「公開只呈現 mrliouai」「所有名稱整合指向 mrliouai」規定。
+
+- MRL 是世界模型／系統原名；MRL 與 MRL_ 原生產品／模組名可在公開及內部合法使用，不能列成洩漏或自動移除。
+- MrLiouWord 是 origin_signature，必須保持；公開來源 metadata 可保留它，產品品牌不可替換來源身分。
+- mrliouai 的既有產品品牌角色保留，但不能取得 MRL 世界模型或 MrLiouWord 來源署名的替代權。
+- 名稱、品牌、來源、作者、歷史分支及平台欄位分別保存；不得因品牌統一改写歷史。
+- 此項裁定只恢復 MRL 命名與来源；其他存取、供應商資料與秘密管理規則沿用。
+- 2026-08-07 的記錄保留為歷史，不冒充現行裁定；本輪不改寫 Git 歷史、原時間、證據 permalink 或授權來源。
+
+根因證據：中央提交 ed66662cbf3a422f7435a24331cedf2ac95d2d70 的 PR 範本禁止公开 MRL；相關 monorepo PR #6 將來源誤作產品品牌批次改名，PR #11 再延續。
+執行／提交作者可由 Git 核對；僅據此不能推定動機，亦不能補造舊授權對話。
