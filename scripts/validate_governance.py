@@ -180,11 +180,31 @@ def check_schema_validation() -> None:
         fail(f"evidence-index.json schema validation failed: {e}")
 
 
+
+def check_mrl_identity_policy() -> None:
+    path = GOVERNANCE / "public-internal-boundary.json"
+    if not path.exists():
+        fail("MRL identity boundary policy missing")
+        return
+    data = json.loads(path.read_text(encoding="utf-8"))
+    public = data.get("public_layer", {})
+    if data.get("canonical_system_name") != "MRL":
+        fail("MRL canonical system name must be retained")
+    if data.get("origin_signature") != "MrLiouWord" or public.get("allowed_origin_signature") != "MrLiouWord":
+        fail("MrLiouWord origin must not be replaced by a product brand")
+    if "MRL" not in public.get("allowed_brands", []):
+        fail("MRL must be permitted in public naming")
+    registry = (GOVERNANCE / "NAMING_MIGRATION_REGISTRY.yml").read_text(encoding="utf-8")
+    for required in ('canonical_system_name: "MRL"', 'origin_signature: "MrLiouWord"', 'role: "canonical_world_model_system_name"', 'scope: "public_and_internal"'):
+        if required not in registry:
+            fail("MRL naming registry missing: " + required)
+
 def main() -> int:
     print(f"=== mrliouai governance validation ===")
     print(f"root_owner: {CANONICAL_ROOT_OWNER}")
     print(f"canonical_name: {CANONICAL_NAME}\n")
 
+    check_mrl_identity_policy()
     check_evidence_json()
     check_governance_md_headers()
     check_conflict_matrix()

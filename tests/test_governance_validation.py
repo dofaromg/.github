@@ -177,3 +177,18 @@ def test_conflict_matrix_missing_ruling_fails(reset_vg_state):
     set_state(tmp_path)
     vg.check_conflict_matrix()
     assert any("Canonical 裁定" in v for v in vg.VIOLATIONS), vg.VIOLATIONS
+
+
+@pytest.mark.parametrize("mutation,expected", [("none", False), ("remove_mrl", True), ("replace_origin", True)])
+def test_mrl_identity_policy(reset_vg_state, mutation, expected):
+    tmp_path = reset_vg_state
+    data = {"canonical_system_name": "MRL", "origin_signature": "MrLiouWord", "public_layer": {"allowed_brands": ["MRL", "mrliouai"], "allowed_origin_signature": "MrLiouWord"}}
+    if mutation == "remove_mrl":
+        data["public_layer"]["allowed_brands"] = ["mrliouai"]
+    if mutation == "replace_origin":
+        data["origin_signature"] = "MrliouAI"
+    (tmp_path / "public-internal-boundary.json").write_text(json.dumps(data))
+    (tmp_path / "NAMING_MIGRATION_REGISTRY.yml").write_text('canonical_system_name: "MRL"\norigin_signature: "MrLiouWord"\nrole: "canonical_world_model_system_name"\nscope: "public_and_internal"\n')
+    set_state(tmp_path)
+    vg.check_mrl_identity_policy()
+    assert bool(vg.VIOLATIONS) == expected

@@ -3,7 +3,7 @@
 # canonical_name: mrliouai
 # registry_version: 1.0.0
 # generated_at: 2026-08-07
-# policy: 對外唯一產品名稱為 mrliouai；其他拼寫為內部資料，保留不更改，僅整合登錄。
+# policy: 2026-10-13 Root 修正：MRL 為世界模型／系統原名，公開與內部均保留；MrLiouWord 為来源署名。
 #         Global unregistered destructive/batch rename is PROHIBITED by default.
 #         All naming migrations must be registered here before execution.
 
@@ -56,17 +56,14 @@ entries:
     authorization_reference: "governance/mrliouai_ROOT_GOVERNANCE.md"
 
   - name: "MRL"
-    role: "internal_abbreviation"
-    classification: "internal"
-    scope: "internal_only"
-    evidence_refs:
-      - "E001"
-      - "E013"
-      - "E014"
-    status: "retained_internal"
-    notes: "原始縮寫；保留為內部識別符；不作為對外品牌"
+    role: "canonical_world_model_system_name"
+    classification: "canonical"
+    scope: "public_and_internal"
+    evidence_refs: ["E001", "E013", "E014"]
+    status: "active"
+    notes: "MRL／MRL_ 原生系統、產品及模組名稱不得因品牌統一被移除"
     authorized_by: "dofaromg"
-    authorization_reference: "governance/CONFLICT_MATRIX.md#C001"
+    authorization_reference: "governance/mrliouai_ROOT_GOVERNANCE.md#2026-10-13"
 
   - name: "MrLiouWord"
     role: "origin_signature"
@@ -81,11 +78,14 @@ entries:
     authorization_reference: "governance/mrliouai_ROOT_GOVERNANCE.md"
 
 policy:
+  canonical_system_name: "MRL"
+  origin_signature: "MrLiouWord"
+  public_MRL_names: "allowed_and_preserved"
   canonical_external_name: "mrliouai"
   internal_names_policy: "retained_unchanged"
   default_rename_policy: "prohibited_without_registration"
   destructive_global_rename: "absolutely_prohibited"
   historical_document_modification: "prohibited"
-  new_public_document_standard: "mrliouai"
+  new_public_document_standard: "preserve_MRL_system_and_MrLiouWord_origin; mrliouai_product_brand_separate"
   alias_policy: "all_names_must_be_registered_here"
   authorized_by: "dofaromg"

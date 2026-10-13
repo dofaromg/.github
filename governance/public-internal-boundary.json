@@ -1,10 +1,10 @@
 {
-  "policy_version": "1.0.0",
+  "policy_version": "1.1.0",
   "generated_at": "2026-08-07",
   "root_owner": "dofaromg",
   "canonical_name": "mrliouai",
   "public_layer": {
-    "description": "Content visible to external users. Only mrliouai brand name allowed. Vendor information is absolutely prohibited here.",
+    "description": "MRL system and MRL_ native names, MrLiouWord origin metadata and the separate mrliouai product brand are permitted. Vendor and secret restrictions remain.",
     "allowed_paths_patterns": [
       "README.md",
       "profile/**",
@@ -25,7 +25,12 @@
       "POWERED BY"
     ],
     "allowed_brand": "mrliouai",
-    "allowed_root_owner_field": "dofaromg"
+    "allowed_root_owner_field": "dofaromg",
+    "allowed_brands": [
+      "MRL",
+      "mrliouai"
+    ],
+    "allowed_origin_signature": "MrLiouWord"
   },
   "internal_layer": {
     "description": "Controlled internal data layer. Vendor provenance and supply chain records must be preserved here.",
@@ -62,5 +67,8 @@
     "fail_mode": "closed",
     "violation_handler": "stop_and_report_to_root",
     "auto_fix": false
-  }
+  },
+  "updated_at": "2026-10-13",
+  "canonical_system_name": "MRL",
+  "origin_signature": "MrLiouWord"
 }
