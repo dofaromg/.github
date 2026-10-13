@@ -35,10 +35,13 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install jsonschema
+        run: pip install jsonschema pytest
 
       - name: Validate governance
         run: python scripts/validate_governance.py
+
+      - name: Test governance regressions
+        run: python -m pytest tests/ -q
 
       - name: Validate JSON schema
         run: |
@@ -146,7 +149,7 @@ jobs:
           violations = []
           for f in pathlib.Path("governance").glob("*.md"):
               content = f.read_text()
-              for m in re.finditer(r"root_owner:\s*(\S+)", content):
+              for m in re.finditer(r"^root_owner:[ \t]*(\S+)[ \t]*$", content, re.MULTILINE):
                   if m.group(1) not in (ROOT_OWNER, "dofaromg"):
                       violations.append(f"{f}: second root_owner '{m.group(1)}'")
           if violations:
